@@ -1,6 +1,6 @@
-const API_DEV_URL = "http://localhost:3000/";
+const API_DEV_URL = process.env.REACT_APP_API_URL_DEV;
 
-const API_PROD_URL = "Heroku link";
+const API_PROD_URL = process.env.REACT_APP_API_URL_PROD;
 
 const PRODUCTION = false;
 

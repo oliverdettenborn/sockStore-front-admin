@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Reset } from "styled-reset";
 
-import ResetCSS from "./styles/global/ResetCSS";
 import GlobalStyle from "./styles/global/Global";
-import HelloWorld from "./pages/HelloWorld";
 
 const App = () => (
   <Router>
-    <ResetCSS />
+    <Reset />
     <GlobalStyle />
     <Switch>
-      <Route exact path="/" component={HelloWorld} />
+      <Route exact path="/">
+        <h1>Hello, world</h1>
+      </Route>
     </Switch>
   </Router>
 );

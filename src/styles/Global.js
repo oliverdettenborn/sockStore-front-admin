@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import Colors from "../../config/colors";
-import Typography from "../../config/typography";
+import Colors from "../config/colors";
+import Typography from "../config/typography";
 
 export default createGlobalStyle`
 
