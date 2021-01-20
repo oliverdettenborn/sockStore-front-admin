@@ -4,6 +4,7 @@ import { Reset } from "styled-reset";
 
 import { Admin, Resource } from "react-admin";
 
+import { FaBookmark } from "react-icons/fa";
 import GlobalStyle from "./styles/Global";
 import authProvider from "./config/authProvider";
 import dataProvider from "./config/dataProvider";
@@ -24,6 +25,7 @@ const App = () => (
         list={CategoriesList}
         edit={CategoriesEdit}
         create={CategoriesCreate}
+        icon={FaBookmark}
       />
     </Admin>
   </Router>
