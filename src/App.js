@@ -1,18 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Reset } from "styled-reset";
 
-import GlobalStyle from "./styles/global/Global";
+import { Admin, Resource, ListGuesser } from "react-admin";
+
+import GlobalStyle from "./styles/Global";
+import authProvider from "./config/authProvider";
+import dataProvider from "./config/dataProvider";
 
 const App = () => (
   <Router>
     <Reset />
     <GlobalStyle />
-    <Switch>
-      <Route exact path="/">
-        <h1>Hello, world</h1>
-      </Route>
-    </Switch>
+    <Admin authProvider={authProvider} dataProvider={dataProvider}>
+      <Resource name="categories" list={ListGuesser} />
+    </Admin>
   </Router>
 );
 
