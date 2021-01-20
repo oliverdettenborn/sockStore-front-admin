@@ -24,7 +24,7 @@ export default function ProductsCreate(props) {
   return (
     <Create {...props}>
       <SimpleForm
-        initialValues={{ stock: 0, price: "0,00" }}
+        initialValues={{ stock: 0 }}
         submitOnEnter
         redirect="show"
         warnWhenUnsavedChanges
@@ -37,7 +37,7 @@ export default function ProductsCreate(props) {
         <TextInput
           label="Preço do produto (R$)"
           source="price"
-          format={(v) => `R$ ${v}`}
+          format={(v) => v.replace(/,/g, ".")}
           validate={validatePrice}
         />
         <SelectInput
@@ -45,9 +45,9 @@ export default function ProductsCreate(props) {
           source="size"
           choices={[
             { id: "U", name: "Único" },
-            { id: "P", name: "Único" },
-            { id: "M", name: "Único" },
-            { id: "G", name: "Único" },
+            { id: "P", name: "Pequeno" },
+            { id: "M", name: "Médio" },
+            { id: "G", name: "Grande" },
           ]}
           validate={validateSize}
         />
@@ -70,7 +70,7 @@ export default function ProductsCreate(props) {
         </ReferenceArrayInput>
         <ArrayInput source="photos">
           <SimpleFormIterator>
-            <TextInput label="Link da foto" source="photos" />
+            <TextInput label="Link da foto" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>

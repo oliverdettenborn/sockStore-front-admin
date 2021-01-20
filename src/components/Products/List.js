@@ -5,7 +5,11 @@ import {
   Datagrid,
   TextField,
   EditButton,
-  ReferenceInput,
+  ChipField,
+  ImageField,
+  NumberField,
+  SingleFieldList,
+  ReferenceManyField,
 } from "react-admin";
 
 export default function ProductsList(props) {
@@ -13,16 +17,21 @@ export default function ProductsList(props) {
     <List {...props}>
       <Datagrid rowClick="edit">
         <TextField source="id" />
-        <TextField source="name" />
-        <TextField source="price" />
-        <TextField source="size" />
-        <TextField source="description" />
-        <TextField source="stock" />
-        <ReferenceInput source="categories" reference="categories">
-          <TextField source="id" />
-          <TextField source="name" />
-        </ReferenceInput>
-        <TextField source="photos" />
+        <TextField label="Nome" source="name" />
+        <TextField label="Preço" source="price" />
+        <TextField label="Tamanho" source="size" />
+        <TextField label="Descrição" source="description" />
+        <NumberField label="Quantidade" source="stock" />
+        <ReferenceManyField
+          label="Categorias"
+          reference="categories"
+          target="categories.id"
+        >
+          <SingleFieldList>
+            <ChipField source="name" />
+          </SingleFieldList>
+        </ReferenceManyField>
+        <ImageField label="Fotos" source="photos" src="photo" />
         <EditButton />
       </Datagrid>
     </List>

@@ -23,12 +23,7 @@ import {
 export default function ProductsEdit(props) {
   return (
     <Edit {...props}>
-      <SimpleForm
-        initialValues={{ stock: 0, price: "0,00" }}
-        submitOnEnter
-        redirect="show"
-        warnWhenUnsavedChanges
-      >
+      <SimpleForm submitOnEnter redirect="show" warnWhenUnsavedChanges>
         <TextInput
           label="Nome do produto"
           source="name"
@@ -37,6 +32,7 @@ export default function ProductsEdit(props) {
         <TextInput
           label="Preço do produto (R$)"
           source="price"
+          // format={(v) => v.replace(/,/g, ".")}
           validate={validatePrice}
         />
         <SelectInput
@@ -44,9 +40,9 @@ export default function ProductsEdit(props) {
           source="size"
           choices={[
             { id: "U", name: "Único" },
-            { id: "P", name: "Único" },
-            { id: "M", name: "Único" },
-            { id: "G", name: "Único" },
+            { id: "P", name: "Pequeno" },
+            { id: "M", name: "Médio" },
+            { id: "G", name: "Grande" },
           ]}
           validate={validateSize}
         />
@@ -69,7 +65,7 @@ export default function ProductsEdit(props) {
         </ReferenceArrayInput>
         <ArrayInput source="photos">
           <SimpleFormIterator>
-            <TextInput label="Link da foto" source="photos" />
+            <TextInput label="Link da foto" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
