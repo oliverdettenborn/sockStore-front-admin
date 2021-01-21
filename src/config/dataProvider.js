@@ -3,7 +3,7 @@ import { fetchUtils } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import API_URL from "./constants";
 
-const httpClient = (url, options = {}) => {
+const httpClient = async (url, options = {}) => {
   if (!options.headers) {
     options.headers = new Headers({ Accept: "application/json" });
   }
