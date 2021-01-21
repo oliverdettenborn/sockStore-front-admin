@@ -10,6 +10,7 @@ import {
   NumberField,
   SingleFieldList,
   ReferenceManyField,
+  ShowButton,
 } from "react-admin";
 
 export default function ProductsList(props) {
@@ -33,6 +34,7 @@ export default function ProductsList(props) {
         </ReferenceManyField>
         <ImageField label="Fotos" source="photos" src="photo" />
         <EditButton />
+        <ShowButton />
       </Datagrid>
     </List>
   );

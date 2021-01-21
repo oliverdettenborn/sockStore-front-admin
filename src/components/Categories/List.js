@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton } from "react-admin";
+import { List, Datagrid, TextField, EditButton, ShowButton } from "react-admin";
 
 export default function CategoriesList(props) {
   return (
@@ -9,6 +9,7 @@ export default function CategoriesList(props) {
         <TextField source="id" />
         <TextField source="name" />
         <EditButton />
+        <ShowButton />
       </Datagrid>
     </List>
   );

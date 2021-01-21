@@ -1,18 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from "react";
 import {
-  List,
-  Datagrid,
+  Show,
+  SimpleShowLayout,
   TextField,
   EmailField,
   NumberField,
-  ShowButton,
 } from "react-admin";
 
 export default function ClientsList(props) {
   return (
-    <List {...props}>
-      <Datagrid>
+    <Show {...props}>
+      <SimpleShowLayout>
         <TextField source="id" />
         <TextField label="Nome" source="name" />
         <TextField label="CPF" source="cpf" />
@@ -24,8 +23,7 @@ export default function ClientsList(props) {
         <TextField label="Bairro" source="address.neighborhood" />
         <TextField label="Cidade" source="address.city" />
         <TextField label="Estado" source="address.state" />
-        <ShowButton />
-      </Datagrid>
-    </List>
+      </SimpleShowLayout>
+    </Show>
   );
 }

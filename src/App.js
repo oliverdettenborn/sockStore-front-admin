@@ -19,6 +19,7 @@ import ProductsEdit from "./components/Products/Edit";
 import ProductsCreate from "./components/Products/Create";
 
 import ClientsList from "./components/Clients/List";
+import ClientsShow from "./components/Clients/Show";
 
 const App = () => (
   <Router>
@@ -39,7 +40,12 @@ const App = () => (
         create={ProductsCreate}
         icon={FaSocks}
       />
-      <Resource name="clients" list={ClientsList} icon={BsPeopleFill} />
+      <Resource
+        name="clients"
+        list={ClientsList}
+        show={ClientsShow}
+        icon={BsPeopleFill}
+      />
     </Admin>
   </Router>
 );
