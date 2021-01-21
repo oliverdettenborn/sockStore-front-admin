@@ -5,7 +5,7 @@ import { Reset } from "styled-reset";
 import { Admin, Resource } from "react-admin";
 
 import { FaBookmark, FaSocks } from "react-icons/fa";
-import { BsPeopleFill } from "react-icons/bs";
+// import { BsPeopleFill } from "react-icons/bs";
 import GlobalStyle from "./styles/Global";
 import authProvider from "./config/authProvider";
 import dataProvider from "./config/dataProvider";
@@ -18,7 +18,7 @@ import ProductsList from "./components/Products/List";
 import ProductsEdit from "./components/Products/Edit";
 import ProductsCreate from "./components/Products/Create";
 
-import ClientsList from "./components/Clients/List";
+// import ClientsList from "./components/Clients/List";
 
 const App = () => (
   <Router>
@@ -39,7 +39,7 @@ const App = () => (
         create={ProductsCreate}
         icon={FaSocks}
       />
-      <Resource name="clients" list={ClientsList} icon={BsPeopleFill} />
+      {/* <Resource name="clients" list={ClientsList} icon={BsPeopleFill} /> */}
     </Admin>
   </Router>
 );
