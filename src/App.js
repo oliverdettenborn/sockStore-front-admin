@@ -13,10 +13,12 @@ import dataProvider from "./config/dataProvider";
 import CategoriesList from "./components/Categories/List";
 import CategoriesEdit from "./components/Categories/Edit";
 import CategoriesCreate from "./components/Categories/Create";
+import CategoriesShow from "./components/Categories/Show";
 
 import ProductsList from "./components/Products/List";
 import ProductsEdit from "./components/Products/Edit";
 import ProductsCreate from "./components/Products/Create";
+import ProductsShow from "./components/Products/Show";
 
 import ClientsList from "./components/Clients/List";
 import ClientsShow from "./components/Clients/Show";
@@ -31,6 +33,7 @@ const App = () => (
         list={CategoriesList}
         edit={CategoriesEdit}
         create={CategoriesCreate}
+        show={CategoriesShow}
         icon={FaBookmark}
       />
       <Resource
@@ -38,6 +41,7 @@ const App = () => (
         list={ProductsList}
         edit={ProductsEdit}
         create={ProductsCreate}
+        show={ProductsShow}
         icon={FaSocks}
       />
       <Resource

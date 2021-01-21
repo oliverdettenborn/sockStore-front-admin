@@ -8,7 +8,7 @@ import {
   NumberField,
 } from "react-admin";
 
-export default function ClientsList(props) {
+export default function ClientsShow(props) {
   return (
     <Show {...props}>
       <SimpleShowLayout>
