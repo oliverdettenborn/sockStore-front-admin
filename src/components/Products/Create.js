@@ -21,8 +21,13 @@ import {
 } from "./validate";
 
 export default function ProductsCreate(props) {
+  const transform = (data) => ({
+    ...data,
+    price: parseFloat(data.price).toFixed(2),
+  });
+
   return (
-    <Create {...props}>
+    <Create {...props} transform={transform}>
       <SimpleForm
         initialValues={{ stock: 0 }}
         submitOnEnter
@@ -37,7 +42,6 @@ export default function ProductsCreate(props) {
         <TextInput
           label="Preço do produto (R$)"
           source="price"
-          format={(v) => v.replace(/,/g, ".")}
           validate={validatePrice}
         />
         <SelectInput

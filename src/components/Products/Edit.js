@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from "react";
 import {
@@ -21,8 +22,13 @@ import {
 } from "./validate";
 
 export default function ProductsEdit(props) {
+  const transform = (data) => ({
+    ...data,
+    price: parseFloat(data.price).toFixed(2),
+  });
+
   return (
-    <Edit {...props}>
+    <Edit {...props} transform={transform}>
       <SimpleForm submitOnEnter redirect="show" warnWhenUnsavedChanges>
         <TextInput
           label="Nome do produto"
@@ -32,7 +38,6 @@ export default function ProductsEdit(props) {
         <TextInput
           label="Preço do produto (R$)"
           source="price"
-          // format={(v) => v.replace(/,/g, ".")}
           validate={validatePrice}
         />
         <SelectInput
@@ -50,6 +55,7 @@ export default function ProductsEdit(props) {
           label="Descrição do produto"
           source="description"
           validate={validateDescription}
+          multiline
         />
         <NumberInput
           label="Quantidade em estoque"
